@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Rental</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+    />
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <h3>ACME Car Rental</h3>
+        <form>
+          <label for="pickupDateInput">Pickup date:</label>
+          <input type="date" id="pickupDateInput" />
+          <label for="numberOfDaysInput">Number of days</label>
+          <input type="number" id="numberOfDaysInput" />
+
+          <fieldset>
+            <legend>Options</legend>
+            <label for="tollTagCheckbox">
+              <input type="checkbox" id="tollTagCheckbox" />
+              Electronic Toll Tag ($3.95/day)
+            </label>
+            <label for="gpsCheckbox">
+              <input type="checkbox" id="gpsCheckbox" />
+              GPS ($3.95/day)
+            </label>
+            <label for="roadsideCheckbox">
+              <input type="checkbox" id="roadsideCheckbox" />
+              Roadside Assistance ($2.95/day)
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Under 25</legend>
+            <input type="radio" name="under25" id="under25No" />
+            <label for="under25No">No</label>
+            <input type="radio" name="under25" id="under25Yes" />
+            <label for="under25Yes">Yes</label>
+          </fieldset>
+          <button type="button" id="estimateButton">Estimate Total Cost</button>
+          <table class="totals">
+            <tbody>
+              <tr>
+                <td>Car rental:</td>
+                <td id="carRentalTotalTD">xxx.xx</td>
+              </tr>
+              <tr>
+                <td>Options:</td>
+                <td id="optionsTotalTD">xx.xx</td>
+              </tr>
+              <tr>
+                <td>Under 25 surcharge:</td>
+                <td id="under25TotalTD">xx.xx</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total due:</td>
+                <td id="totalTD">xxx.xx</td>
+              </tr>
+            </tfoot>
+          </table>
+        </form>
+      </article>
+    </main>
+    <script>
+      "use script";
+      //   this function will run after the page loads
+      // in it we usually get associate functions with the events that happen on html elements in the page
+      function init() {
+        // get the html element into a variable
+        // the variable holds and object which represents the html taht has the specific id
+        let estimateButton = document.getElementById("estimateButton");
+        estimateButton.onclick = onEstimateButtonClicked;
+      }
+      //   wait fot the page to load and the nrun this function (init)
+      //   why? because if the page hasnt loaded the html elements I need might not be there
+      window.onload = init;
+
+      function onEstimateButtonClicked() {
+        // get the html elements we need to do the estimate/calculation into variables
+        // the variable hold an object which represents the html that has the specified id
+        let numberOfDaysInput = document.getElementById("numberOfDaysInput");
+        let tollTagCheckbox = document.getElementById("tollTagCheckbox");
+        let gpsCheckbox = document.getElementById("gpsCheckbox");
+        let roadsideCheckbox = document.getElementById("roadsideCheckbox");
+        let under25No = document.getElementById("under25No");
+        let under25Yes = document.getElementById("under25Yes");
+
+        // get the html elements we need to display the results of our estimate/calculations
+        let carRentalTotalTD = document.getElementById("carRentalTotalTD");
+        let optionsTotalTD = document.getElementById("optionsTotalTD");
+        let under25TotalTD = document.getElementById("under25TotalTD");
+        let totalTD = document.getElementById("totalTD");
+        const dailyCarRentalRate = 29.99;
+        const tollTagRate = 3.95;
+        const gpsRate = 3.95;
+        const roadsideAssistanceRate = 2.95;
+        const under25Surcharge = 0.3;
+
+        let numberOfDays = numberOfDaysInput.value;
+        let carRentalCost = numberOfDays * dailyCarRentalRate;
+        
+
+        let optionsTotal = 0;
+        if (tollTagCheckbox.checked) {
+          optionsTotal += tollTagRate;
+          // optionsTotal = options + 3.95 same thing as above
+        }
+
+        if (gpsCheckbox.checked) {
+          optionsTotal += gpsRate;
+          // optionsTotal = options + 3.95 same thing as above
+        }
+
+        if (roadsideCheckbox.checked) {
+          optionsTotal += roadsideAssistanceRate;
+          // optionsTotal = options + 3.95 same thing as above
+        }
+
+        if (under25Yes.checked) {
+          under25Yes = under25Surcharge * dailyCarRentalRate;
+        } else {
+          under25Yes = 0.00;
+        }
+        let totalDue = optionsTotal + carRentalCost + under25Yes;
+        // let optionsTotal = optionsCost
+
+        optionsTotalTD.innerText = "$" + optionsTotal.toFixed(2);
+        carRentalTotalTD.innerText = "$" + carRentalCost.toFixed(2);
+        under25TotalTD.innerText = "$" + under25Yes.toFixed(2);
+        totalTD.innerText = "$" + totalDue.toFixed(2)
+
+        console.log(carRentalCost);
+      }
+    </script>
+  </body>
+</html>
+

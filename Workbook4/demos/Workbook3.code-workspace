@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../Workbook3"
+	},
+	{
+		"path": ".."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Workbook3"
+  }
+}

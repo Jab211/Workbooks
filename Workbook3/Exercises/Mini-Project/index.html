@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IceCream</title>
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+  />
+</head>
+<body>
+    <main>
+
+        <div>
+            <h2>Ice Shop</h2>
+            <label for="numberOfScoopsInput">Number of scoops</label>
+            <input type="number" id="numberOfScoopsInput" required>
+        </div>
+        <!-- <div>
+            <input type="radio">
+            <label for="cone">Cone</label>
+            <input type="radio">
+            <label for="cup">Cup</label>
+        </div> -->
+        <fieldset>
+            <input type="radio" name="iceCreamCup" id="cupInput" />
+            <label for="cupOption">Cup</label>
+            <input type="radio" name="iceCreamCone" id="coneInput" />
+            <label for="coneOption">Cone</label>
+          </fieldset>
+        <div>
+            <h2>Toppings</h2>
+            <fieldset>
+                <table>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sprinklesOption">
+                      </td> 
+                      <td><label for="sprinkles">Sprinkles ($0.50)</label></td>
+                      <td>
+                        <input type="checkbox" id="whippedCreamOption">
+                      </td> 
+                      <td><label for="whippedCream">Whipped Cream ($0.25)</label></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="hotFudgeOption">
+                      </td> 
+                      <td><label for="hotFudge">Hot Fudge($1.25)</label></td>
+                      <td>
+                        <input type="checkbox" id="cherryOption">
+                      </td> 
+                      <td><label for="cherry">Cherry($0.25)</label></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <div>
+                <button type="submit" id="submitButton">Submit Order</button>             
+            </div>
+            <div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Base price:</td>
+                            <td id="basePrice" >xxx.xx</td>
+                        </tr>
+                        <tr>
+                            <td>Tax:</td>
+                            <td id="taxTotal">xxx.xx</td>
+                        </tr>
+                        <tr>
+                            <td>Total Due</td>
+                            <td id="iceCreamTotal">xxx.xx</td>
+                        </tr>
+                    </tbody>  
+                </table>
+                 
+            </div>
+
+        </div>
+       
+
+
+ 
+      
+    </main>
+<script src="index.js"></script>
+</body>
+</html>

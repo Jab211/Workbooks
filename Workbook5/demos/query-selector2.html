@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query Selector Examples</title>
+  </head>
+  <body>
+    <h3 id="heading3">Query Selector Examples</h3>
+    <div class="alertDiv">This is an Alert!</div>
+    <div class="alertDiv">This is another Alert!</div>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, aut.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, aut.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, aut.</p>
+    <script>
+      "use strict";
+
+      //  new school (it's the new style)
+      let heading3 = document.querySelector("#heading3");
+      console.log(heading3);
+      heading3.innerText = "Query Selector Use Case";
+      heading3.style.color = "purple";
+      heading3.style.textTransform = "uppercase";
+
+      let alertDivs = document.querySelectorAll(".alertDiv");
+      console.log(alertDivs);
+      for (const alertDiv of alertDivs) {
+        alertDiv.style.border = "1px solid red";
+        alertDiv.style.padding = "1rem"
+      }
+
+      let paragraphs = document.querySelectorAll("p");
+      console.log(paragraphs);
+      for (const p of paragraphs) {
+        p.style.backgroundColor = "tan"
+      }
+    </script>
+  </body>
+</html>
