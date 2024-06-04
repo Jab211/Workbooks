@@ -1,0 +1,8 @@
+### GET TODOS
+GET https://jsonplaceholder.typicode.com/todos HTTP/1.1
+### GET ALBUMS
+GET https://rapidapi.com/theapiguy/api/free-nba/
+### CAT
+GET https://http.cat/200
+GET https://http.cat/404 
+GET https://http.cat/500 
