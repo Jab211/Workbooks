@@ -27,6 +27,7 @@ function teamInfo() {
   for (const team of teams) {
     if (team.code === teamCode) {
       const details = `The ${team.name} (${team.code}) plays in ${team.plays}`;
+      const details1 = `The dallas cowboys (DAL) plays in Dallas, TX` ;
       messageParagraph.innerText = details;
       
     
