@@ -1,0 +1,25 @@
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "name": " aung",
+  "username": "awng",
+  "email": "awng5423@gmail.com@",
+  "address": {
+    "street": "hillside",
+    "suite": "Suite 21",
+    "city": "queens",
+    "zipcode": "11329",
+    "geo": {
+      "lat": "-31.8129",
+      "lng": "62.5342"
+    }
+  },
+  "phone": "(254)954-1289",
+  "website": "demarco.info",
+  "company": {
+    "name": "Keebler LLC",
+    "catchPhrase": "User-centric fault-tolerant solution",
+    "bs": "revolutionize end-to-end systems"
+  }
+}
