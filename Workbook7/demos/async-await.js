@@ -1,10 +1,10 @@
 "use strict";
 
-fetch("https://jsonplaceholder.typicode.com/users")
-  .then((response) => response.json())
-  .then((user) => {
-    console.log(user);
-  });
+// fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((response) => response.json())
+//   .then((user) => {
+//     console.log(user);
+//   });
 
 // async - notation that the function is going to: use await inside of it (i.e. call a function that returns a prmoise)
 
@@ -15,3 +15,11 @@ async function loadUsers() {
   let users = await response.json();
   console.log(users);
 }
+loadUsers();
+
+async function loadPhotos(){
+    let response = await fetch("https://jsonplaceholder.typicode.com/photos")
+    let photos = await response.json();
+    console.log(photos);
+}
+loadPhotos();
