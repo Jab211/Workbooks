@@ -23,7 +23,7 @@ function buildTableRow(user) {
 
   let cell5 = row.insertCell();
   let editLink = document.createElement("a");
-  editLink.href = "edit.html";
+  editLink.href = "edit.html?id=" + user.id;
   editLink.innerText = "Edit";
   //   let editButton = document.createElement("button");
 
@@ -31,7 +31,7 @@ function buildTableRow(user) {
 
   let cell6 = row.insertCell();
   let deleteLink = document.createElement("a");
-  deleteLink.href = "delete.html";
+  deleteLink.href = "delete.html?id=" + user.id;
   deleteLink.innerText = "Delete";
   cell6.appendChild(deleteLink);
 }
